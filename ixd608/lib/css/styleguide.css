@@ -1,60 +1,254 @@
 /* css reset */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
 *,*: :after, *::before {
 	box-sizing: border-box;
 }
 
 :root {
-	- -color-neutral -light:#eee;
-	- -color-neutral -medium:#999;
-	- -color-neutral -dark:#555;
-
-	- -header-height:3rem;
-	- -space:1rem;
+    --white : #f8f7f1;
+    --light-blue : #84dbda;
+    --dark-blue : #2ea3f2;
+    --black : #000000;
+    --yellow : #ffeb4d;
+    --orange : #f39900;
+    --gray: #333333;
+    --pink : #ffccff;
+    --magenta : #cc33cc;
+    -header-height:3.5rem;
+    --spacing:1rem;
 }
 
-:body {
-	margin:0;
-	front-size:100%;
-	front-family:Helvetica, Arial, sans-serif;
+@font-face {
+    font-family: 'Poppins''Times';
+    src: url('Kaoly Demo-Regular.ttf');
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	front-family: Georgia, "Times NeW Roman";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+	background-color: lightpink;
+	font-size:100%;
+    font-family:"Poppins", sans-serif;
+    margin-bottom:10px;
+}
+
+h1 {
+    font-size: 50pt;
+    padding: 5% 0%;
+
+}
+
+h2 {
+    font-size: 45pt;
+    color: darkcyan;
+    padding: 5% 0%;
+}
+
+h3 {
+    font-size: 35pt;
+}
+
+h4 {
+    font-size: 25pt
+}
+
+p {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: grey;
 }
 
 a {
 	color: inherit;
-	ont-weight: bold;
+	font-weight: bold;
 	text-decoration: none;
 }
+
 a:hover {
 	text-decoration: underline;
 }
 
-/* LAYOUT CLASSES */
-.container {
-	max-width: 1200px;
-	margin-right: auto;
-	margin-left: auto;
+.card.soft {
+	border-radius: 0.5em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) ;
+	padding: 40px;
+	width: 100%;
+	background-color: white;
+}
+
+.card.hard {
+	border-radius: 0.2em;
+	border: 2px solid var(--color-neutral-medium);
 
 }
 
-.display-flex { display:flex; }
-.display-inline-flex { display:inline-flex; }
-.display-block {display: block;}
-.display-inline-block { display:inline-block; }
+.card.dark {
+	background-color: var(--color-neutral-dark);
 
-.flex-stretch {flex: 1 1 auto; }
-.flex-none {flex: none; }
+}
 
-.flex-align-center { align-item:center; }
-.flex-justify-center { justify-content:center; }
+.card.medium {
+	background-color: var(--color-neutral-medium);
+
+}
+
+.card.flat {
+	padding: 0;
+}
+
+
+.swatchcard {
+	background-color: var(--color-white);
+	height: 80px ;
+	margin: 10px;
+	border-radius: 0.5em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	font-family: "stevie-sans", sans-serif;
+	font-weight: 500;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	padding: 10px;
+
+}
+
+.swatch1 {
+	background-color: white;
+	color: black;
+}
+
+.swatch2 {
+	background-color: pink;
+	color: black;
+}
+
+
+.swatch3 {
+	background-color: black ;
+	color: white;
+}
+
+
+.swatch4 {
+	background-color: #FFAE88;
+	color: black;
+}
+
+.swatch5 {
+	background-color: #6A515E;
+	color: black;
+}
+
+.swatch6 {
+	background-color: #C4C4C4;
+	color: black;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.header__div__title {
+    font-family: 'Kaoly';
+    font-size: 60pt;
+}
+
+.header__div__subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35pt;
+}
+
+.color_palette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 30% 10%;
+}
+
+.section_title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24pt;
+}
+
+.color_palette__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.fonts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 30% 10%;
+
+}
+
+.divisor {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 75%;
+}
+
+.kaoly {
+    font-family: 'Kaoly', Arial, Helvetica, sans-serif;
+    padding: 1%;
+    font-size: 24pt;
+}
+
+.abril {
+    font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+    padding: 1%;
+    font-size: 24pt;
+}
+
+.aril_bold {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1%;
+    font-size: 24pt;
+}
+
+.abril_regular {
+    font-family: 'Abril Regular';
+    padding: 1%;
+    font-size: 24pt;
+}
+
+.font-size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 30% 10%;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 30% 10%;
+}
+
 
 
 

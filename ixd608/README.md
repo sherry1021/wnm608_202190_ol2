@@ -1,2 +1,7 @@
-# wnm608_202190_ol2
-WNM 608 OL2
+# Gongjie Jiang
+
+
+## Relvant refrence
+https://gongjiejiang.co/
+https://gongjiejiang.co/AAU/ixd608/lib/index.html
+https://gongjiejiang.co/AAU/ixd608/styleguide.html
