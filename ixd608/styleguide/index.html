@@ -10,34 +10,72 @@
 </head>
 
 <body style="margin-left: 180px; margin-right: 180px">
-  <header class="navbar">
-    <div class="container" id="tableofcontent">
-      <div class="card">
-        <h2>Styleguide</h2>
-        <ul>
-<h4>Typography</h4>
-        </ul>
+   <header class="navbar" style="left: 0px">
+      <div class="container display-flex flex-align-center" style="margin-bottom: 2px;">
+         <div class="flex" style="margin-left: 180px;">
+            <h1>Styleguide</h1>
+         </div>
+
+         <div class="flex-stretch"></div>
+         <nav class="flex-none nav">
+            <ul class="container display-flex">
+               <li class="tag"><a href="#tableofcontents">Table of Contents</a></li>
+            </ul>
+         </nav>
       </div>
-    </div>
+   </header>
 
-   <div class="card soft" id="headings">
-      <h1 class="font">Typeface: Poppins</h1>
+<div class="container" id="tableofcontents">
+      <h2>Table of Contents</h2>
+      <div class="card soft"> 
+         <nav class="nav">
+            <ul>
+               <li><a href="#typography">Typography</a></li>
+               <ul>
+                  <li><a href="#headings">Headings</a></li>
+                  <li><a href="#paragraphs">Paragraphs</a></li>
+               </ul>
+               <li><a href="#cards">Cards</a></li>
+               <li><a href="#viewwindow">ViewWindow</a></li>
+               <li><a href="#navigations">Navigations</a></li>
+               <li><a href="#gridsystem">Grid System</a></li>
+               <li><a href="#flexsystem">Flex System</a></li>
+               <li><a href="#tables">Tables</a></li>
+               <li><a href="#figure">Figure</a></li>
+               <li><a href="#forms">Forms</a></li> 
+               <ul>
+                  <li><a href="#inputs">Inputs</a></li>
+                  <li><a href="#label">Labels</a></li>
+                  <li><a href="#controls">Controls</a></li>
+                  <li><a href="#buttons">Buttons</a></li>
+               </ul>
+            </ul>
+         </nav>
+      </div>
+   </div>
 
-         <h3 class="headingbig"> This is a heading</h3>
-         <p class="caption">Poppins Black, 48pt</p>
-
-         <h4 class="subheading">This is a subheading</h4>
-         <p class="caption">Poppins Medium, 32pt</p>
-
-         <h4 class="bodyheading">Body</h4>
-         <p class="bodytext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a consequat ante. Mauris pellentesque vestibulum fermentum. Donec eu vehicula ex, non convallis nisl. Fusce auctor erat nec diam interdum, a auctor sem pulvinar. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean id viverra diam, quis posuere dolor. Sed feugiat nisi eget lorem scelerisque sodales. Pellentesque pellentesque nunc nibh, id dictum felis gravida eget. Aenean pretium venenatis blandit. Curabitur tellus ipsum, venenatis a efficitur ut, iaculis vel odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-         <p class="caption">Poppins Light, 24pt</p>
+ <!-- TYPOGRAPHY -->
+   <div class="container" id="typography">
+      <h2>Typography</h2>
+      <div class="card soft" id="headings">
+         
+         <h1>Heading 1</h1>
+         <h3>Heading 2</h3>
+         <h4>Heading 3</h4>
+         <h5>Heading 4</h5>
+         <h6>Heading 5</h6>
+         <h7>Heading 6</h7>
+      </div>
+      <div class="card soft" id="paragraphs">
+         <h6>Paragraphs</h6>
+         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos voluptas quibusdam sequi sunt nostrum et voluptates consequuntur magnam animi repudiandae iusto esse harum, quaerat corporis consectetur explicabo numquam doloremque natus.</p>
+         <p>Odit doloribus, praesentium corrupti nulla corporis repellendus, quas sunt quasi illo eos inventore dolores harum libero placeat. Optio voluptatibus voluptate, quasi, id fugiat eos perferendis atque possimus, veniam, dolore quidem.</p>
+         <p>Temporibus corporis architecto est, nihil pariatur ab excepturi id perspiciatis quas laborum aliquid maxime quasi qui amet repudiandae itaque! Assumenda cum nemo corporis, a eligendi eveniet suscipit dolorum, nesciunt aliquid.</p>
       </div>
    </div>
 
 <br>
-    <h4>Colors</h4>
+    <h2>Color Palette</h2>
 
        <div class="card soft" id="swatchcard">
 
@@ -62,6 +100,308 @@
          </div>
    </div>
 </div>
+
+
+   <!-- NAVIGATIONS -->
+
+
+   <div class="container" id="navigations">
+      <h2>Navigations</h2>
+
+      <script>
+         const makeNav = (classes='') => {
+            const links = ['home','store','about'];
+            let ran = Math.floor(Math.random()*links.length);
+            document.write(`
+               <div>
+               <nav class="${classes}">
+               <ul>
+               ${links.reduce((r,o,i)=>{
+                  return r+`<li class="${ran==i? 'active':''}"><a href="#">${o}</a></li>`;
+               },'')}
+               </ul>
+               </nav>
+
+               </div>
+               `);
+         }
+      </script>
+
+
+      <div class="card soft">
+         <h6>Basic Nav</h6>
+         <script>makeNav('nav')</script>
+                  <h6>Stretch Nav</h6>
+         <script>makeNav('nav nav-stretch')</script>
+                  <h6>Material Nav</h6>
+         <script>makeNav('nav nav-material')</script>
+       
+      </div>
+
+      <script>
+         $("#navigations a").on("click", function(e){
+            e.preventDefault();
+            $(this).closest("li").addClass("active")
+            .siblings().removeClass("active")
+         })
+      </script>
+
+   </div>
+
+
+   <!-- FIGURE -->
+
+   <div class="container" id="figure">
+      <h2>Product Gallery</h2>
+
+      <div class="card soft">
+         <figure class="figure">
+            <img src="../img/lip4.jpeg"  alt=""/>
+            <figcaption>Product</figcaption>
+         </figure>
+
+      </div>
+
+
+
+      <!-- PRODUCT GRID  -->
+      <div class="container">
+         <h2>Product Grid</h2>
+         <div class="grid gap">
+            <div class="col-xs-12 col-md-4">
+               <figure class="figure product">
+                  <img src="../img/lip1.webp"  alt=""/>
+                  <figcaption>
+                     <div>Product Name</div>
+                     <div>$3.99</div>
+                  </figcaption>
+               </figure>
+            </div>
+            <div class="col-xs-12 col-md-4">
+               <figure class="figure product">
+                  <img src="../img/lip2.jpg">
+                  <figcaption>
+                     <div>Product Name</div>
+                     <div>$3.99</div>
+                  </figcaption>
+               </figure>
+            </div>
+            <div class="col-xs-12 col-md-4">
+               <figure class="figure product">
+                  <img src="../img/lip3.jpg"  alt=""/>
+                  <figcaption>
+                     <div>Product Name</div>
+                     <div>$3.99</div>
+                  </figcaption>
+               </figure>
+            </div>
+         </div></div>
+
+         <!-- PRODUCT OVERLAY CENTER -->
+         
+         <div class="container">
+            <h2>Product Overlay</h2>
+            <div class="grid gap">
+               <div class="col-xs-12 col-md-4">
+                  <figure class="figure product-overlay">
+                     <img src="../img/lip2.jpg"  alt=""/>
+                     <figcaption>
+                        <div class="caption-body">
+                           <div>Product Name</div>
+                           <div>$3.99</div>
+                        </div>
+                     </figcaption>
+                  </figure>
+               </div>
+               <div class="col-xs-12 col-md-4">
+                  <figure class="figure product-overlay">
+                     <img src="../img/lip2.jpg"  alt=""/>
+                     <figcaption>
+                        <div class="caption-body">
+                           <div>Product Name</div>
+                           <div>$3.99</div>
+                        </div>
+                     </figcaption>
+                  </figure>
+               </div>
+               <div class="col-xs-12 col-md-4">
+                  <figure class="figure product-overlay">
+                     <img src="../img/lip2.jpg"  alt=""/>
+                     <figcaption>
+                        <div class="caption-body">
+                           <div>Product Name</div>
+                           <div>$3.99</div>
+                        </div>
+                     </figcaption>
+                  </figure>
+               </div>
+            </div></div>
+
+         <!-- FORM -->
+
+      <div class="container" id="forms">
+
+         <h2>Order Form</h2>
+
+         <div class="card soft">
+
+            <div class="container">
+               <h2>Place your order</h2>
+               <form action="" method="post">
+                  <input type="text" /><br />
+                  <input type="number" /><br />
+                  <input type="password" /><br />
+                  <input type="email" /><br />
+                  <input type="url" /><br />
+                  <input type="datetime-local" /><br />
+                  <input type="date" /><br />
+                  <input type="search" /><br />
+               </form>
+            </div>
+
+            <div class="container">
+               <h3>Order Form</h3>
+               <form>
+                  <input type="text" placeholder="Text" class="form-input" />
+                  <input type="number" placeholder="Number" class="form-input" />
+                  <input type="password" placeholder="Password" class="form-input" />
+                  <input type="search" placeholder="Search" class="form-input" />
+               </form>
+            </div>
+
+
+            <div class="container">
+               <h3>Form Label</h3>
+               <form>
+                  <label for="" class="form-label">Phone</label>
+                  <input type="number" placeholder="Number" class="form-input" />
+                  <label for="" class="form-label">Password</label>
+                  <input type="password" placeholder="Password" class="form-input" />
+                  <label for="" class="form-label">Search</label>
+                  <input type="search" placeholder="Search" class="form-input" />
+               </form>
+            </div>
+
+
+            <div class="container">
+               <h3 id="controls">Form Control</h3>
+               <form>
+                  <div class="form-control">
+                     <label for="" class="form-label">Name</label>
+                     <input type="text" placeholder="Text" class="form-input" />
+                  </div>
+                  <div class="form-control">
+                     <label for="" class="form-label">Phone</label>
+                     <input type="number" placeholder="Number" class="form-input" />
+                  </div>
+                  <div class="form-control">
+                     <label for="" class="form-label">Password</label>
+                     <input type="password" placeholder="Password" class="form-input" />
+                  </div>
+                  <div class="form-control display-flex flex-align-center" >
+                     <div class="flex-none">
+                        <label for="" class="form-label">Search</label>
+                     </div>
+                     <div class="flex-stretch">
+                        <input type="search" placeholder="Search" class="form-input flex-stretch" />
+                     </div>
+                     <div class="flex-none">
+                        <label for="" class="form-label">Search</label>
+                     </div>
+                     <div class="flex-stretch">
+                        <input type="search" placeholder="Search" class="form-input flex-stretch" />
+                     </div>
+                  </div>
+               </form>
+            </div>
+
+
+            </div>
+
+            <h2 id="buttons">Buttons</h2>
+               <div class="card soft">
+                  <h3>Default Buttons</h3>
+                  <button>BUTTON</button>
+
+                  <h3>Default Buttons</h3>
+                  <div class="form-control">
+                     <button class="form-button">BUTTON</button>
+                  </div>
+                  <div class="form-control">
+                     <input type="button" class="form-button" value="Input">
+                  </div>
+                  <div class="form-control">
+                     <a href="#" class="form-button">ANCHOR</a>
+                  </div>
+               </div>
+
+            <h2 id="hotdog">Hotdog</h2>
+               <div class="card soft">
+                  <div class="form-control">
+                     <form>
+                        <input type="search" class="hotdog" placeholder="Search" />
+                     </form>
+                  </div>
+                  <div class="form-control">
+                     <form>
+                        <input type="search" class="hotdog dark" placeholder="Search" />
+                     </form>
+                  </div>
+                  <div class="form-control">
+                     <form class="card dark">
+                        <input type="search" class="hotdog light" placeholder="Search" />
+                     </form>
+                  </div>
+
+                  <div class="form-control">
+                     <form class="hotdog">
+                        <span>&#128269;</span>
+                        <input type="search" placeholder="Search" />
+                     </form>
+                  </div>
+               </div>
+
+                  <!-- CHECK BOX INPUT -->
+                  <h2 id="checkboxes">Check Boxes</h2>
+
+                           <div class="card soft">
+            <div class="container">
+               <div class="form-select">Cart Buttons
+                  <select>
+                     <option>1</option>
+                     <option>2</option>
+                     <option>3</option>
+                     <option>4</option>
+                  </select>
+               </div></div>
+
+                     <div class="container">
+                           <div class="favorite">
+                              <input id="heart-example" type="checkbox" class="hidden">
+                              <label for="heart-example">&hearts;</label><h6>Save for later</h6>
+
+                           </div>
+                        </div>
+
+                     <h6>Toggle</h6>
+                     <div class="toggle">
+                        <input id="toggle-1" type="checkbox" class="hidden">
+                        <label for="toggle-1"></label>
+                     </div>
+
+                     <div class="display-flex flex-align-center">
+                        <div class="flex-stretch"> 
+                           <label for="toggle-2" class="form-label"><h6>Warning</h6></label>
+                        </div>
+
+                        </div>
+                     </div>
+
+                     
+                  </div>
+
+      </body>
+      </html>
 
 
 
