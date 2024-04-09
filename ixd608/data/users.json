@@ -1,0 +1,46 @@
+[
+	{
+		"name":"Gongjie Jiang" ,
+		"type":"Student" ,
+		"email":"gjiang4@art.edu" ,
+		"classes":"[620, 608 ,700]" ,
+
+	}
+		{
+		"name":"Monica Finger" ,
+		"type":"Student" ,
+		"email":"Mfinger2@art.edu" ,
+		"classes":"[620, 608 ,700]" ,
+
+	}
+		{
+		"name":"Danneil Gellar" ,
+		"type":"Student" ,
+		"email":"Dgellar5@art.edu" ,
+		"classes":"[620, 608 ,700]" ,
+
+	}
+		{
+		"name":"Ross Bing" ,
+		"type":"Student" ,
+		"email":"rbing8@art.edu" ,
+		"classes":"[620, 608 ,700]" ,
+
+	}
+		{
+		"name":"Dake Hamilton" ,
+		"type":"Student" ,
+		"email":"dhamilton8@art.edu" ,
+		"classes":"[620, 608 ,700]" ,
+
+	}
+		{
+		"name":"Bob Tribbiani" ,
+		"type":"Student" ,
+		"email":"btribbiani9@art.edu" ,
+		"classes":"[620, 608 ,700]" ,
+
+	}
+
+	
+]

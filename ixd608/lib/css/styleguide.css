@@ -111,21 +111,43 @@ a:hover {
 /* layout classes */
 
 .container {
-     max-width:1545px;
-     margin-bottom: 40px;
+     width:1900px;
+     margin-bottom: 0 auto;
 }
 
-.display-flex { display:flex; }
+.container .grid {
+    display: flex; /* Use flexbox to make grid items display horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+
+.display-flex {     
+    display: flex;
+    justify-content: space-around; 
+}
+
+.display-flex {
+    display: flex;
+
+}
 .display-inline-flex { display:inline-flex; }
 .display-block { display:block; }
 .display-inline-block { display:inline-block; }
 
+.flex-stretch { 
+    flex: 1 1 auto; 
+    padding: 0.5em;
+    }
 
-.flex-stretch {flex: 1 1 auto;}
-.flex-none {flex: none;}
+.flex-none { flex: none; }
 
-.flex-align-center{align-items: center;}
-.flex-justify-center{justify-content: center;}
+
+.flex-align-center { align-items:center; }
+.flex-justify-center { justify-content:center; }
+
+
+
 .nav ul {
     list-style-type:none;
     margin-top: 0;
@@ -135,6 +157,8 @@ a:hover {
 
     .nav a {
         display:block;
+        font-size: 14pt;
+        font-weight: 700;
         padding:0.2em 0.5em;
     }
 
@@ -145,7 +169,7 @@ a:hover {
     }
 
     .nav .active a {
-        background-color: var(--color-main-light);
+        background-color: transparent;
         color: inherit;
     }
 
@@ -161,6 +185,7 @@ a:hover {
     .nav-stretch li {
         flex: 1 1 auto;
         text-align:center;
+
     }
 
     .nav-pills a {
@@ -210,14 +235,19 @@ a:hover {
     }
 
 
-    .nav-material .active a::after {
-        height: 4px;
+    .nav-material a:hover::after{
+    height: 4px;
+    }
+
+    .nav-material .active a::after{
+    height: 5px;
+    background-color: #B4B4B4;
     }
 
 
 
 .navbar {
-    background-color: #323232;
+    background-color: #be0000;
     color: #ffffff;
     line-height:var(--header-height);
 
@@ -225,7 +255,7 @@ a:hover {
 
     .navbar h1 {
         font-size:2.3em;
-        margin:0;
+        margin-top:30px;
         font-family:var(--font-sans);
     }
     .navbar a {
